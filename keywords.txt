@@ -1,0 +1,43 @@
+#######################################
+# HTTPRequest Syntax Coloring Map     #
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)                #
+#######################################
+
+Callback	KEYWORD1
+HttpMethod	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)    #
+#######################################
+HTTPRequest	KEYWORD2
+catchRequest	KEYWORD2
+printRequest	KEYWORD2
+getHeader	KEYWORD2
+getQueryParam	KEYWORD2
+getFormData	KEYWORD2
+getMethod	KEYWORD2
+getRoute	KEYWORD2
+getProtocol	KEYWORD2
+getHeaders	KEYWORD2
+getQueryParams	KEYWORD2
+getForm	KEYWORD2
+getMethodConstant	KEYWORD2
+parseRequest	KEYWORD2
+getValueFromString	KEYWORD2
+getContentLength	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)                #
+#######################################
+REQUEST_DEBUG	LITERAL1
+OPTIONS	LITERAL1
+GET	LITERAL1
+HEAD	LITERAL1
+POST	LITERAL1
+PUT	LITERAL1
+DELETE	LITERAL1
+TRACE	LITERAL1
+CONNECT	LITERAL1
