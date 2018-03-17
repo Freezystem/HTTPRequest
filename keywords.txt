@@ -1,43 +1,52 @@
 #######################################
-# HTTPRequest Syntax Coloring Map     #
+# WiSer Syntax Coloring Map           #
 #######################################
 
 #######################################
-# Datatypes (KEYWORD1)                #
+# Classes and datatypes (KEYWORD1)    #
 #######################################
 
-Callback	KEYWORD1
-HttpMethod	KEYWORD1
+Callback            KEYWORD1
+HttpMethod          KEYWORD1
+HttpCode            KEYWORD1
+WiSerHelper         KEYWORD1
+WiSerRequest        KEYWORD1
+WiSerResponse       KEYWORD1
 
 #######################################
-# Methods and Functions (KEYWORD2)    #
+# Methods and functions (KEYWORD2)    #
 #######################################
-HTTPRequest	KEYWORD2
-catchRequest	KEYWORD2
-printRequest	KEYWORD2
-getHeader	KEYWORD2
-getQueryParam	KEYWORD2
-getFormData	KEYWORD2
-getMethod	KEYWORD2
-getRoute	KEYWORD2
-getProtocol	KEYWORD2
-getHeaders	KEYWORD2
-getQueryParams	KEYWORD2
-getForm	KEYWORD2
-getMethodConstant	KEYWORD2
-parseRequest	KEYWORD2
-getValueFromString	KEYWORD2
-getContentLength	KEYWORD2
+
+# WiSerHelper.h
+statusToString      KEYWORD2
+statusToCodeString  KEYWORD2
+methodToString      KEYWORD2
+codeStringToStatus  KEYWORD2
+stringToMethod      KEYWORD2
+
+# WiSerRequest.h
+catchRequest        KEYWORD2
+printRequest        KEYWORD2
+getClient           KEYWORD2
+getHeader           KEYWORD2
+getQueryParam       KEYWORD2
+getFormData         KEYWORD2
+getMethod           KEYWORD2
+getRoute            KEYWORD2
+getProtocol         KEYWORD2
+getHeaders          KEYWORD2
+getQueryParams      KEYWORD2
+getForm             KEYWORD2
+getCode             KEYWORD2
+
+# WiSerResponse.h
+setStatus           KEYWORD2
+setHeader           KEYWORD2
+setContent          KEYWORD2
+send                KEYWORD2
 
 #######################################
 # Constants (LITERAL1)                #
 #######################################
-REQUEST_DEBUG	LITERAL1
-OPTIONS	LITERAL1
-GET	LITERAL1
-HEAD	LITERAL1
-POST	LITERAL1
-PUT	LITERAL1
-DELETE	LITERAL1
-TRACE	LITERAL1
-CONNECT	LITERAL1
+
+WISER_DEBUG         LITERAL1
