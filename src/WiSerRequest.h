@@ -13,12 +13,10 @@ class WiSerRequest {
     WiSerRequest(WiFiClient& client) : _client(client) {
       _request = "";
       _headers = "";
-      //_method;
       _route = "";
       _protocol = "";
       _params = "";
       _form = "";
-      //_code;
     };
     void catchRequest(RequestCallback& func);
     void printRequest();
