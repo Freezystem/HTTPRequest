@@ -6,6 +6,7 @@
 #endif
 
 #include <Arduino.h>
+#include <WiFi101.h>
 
 enum class HttpMethod : unsigned int {
   OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT

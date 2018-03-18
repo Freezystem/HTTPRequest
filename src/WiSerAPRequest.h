@@ -1,9 +1,6 @@
 #ifndef WISERAPREQUEST_h
 #define WISERAPREQUEST_h
 
-#include <Arduino.h>
-#include <WiFi101.h>
-
 #include "WiSerHelpers.h"
 
 class WiSerAPRequest {
