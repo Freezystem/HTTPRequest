@@ -1,22 +1,22 @@
-#ifndef WISERRESPONSE_h
-#define WISERRESPONSE_h
+#ifndef WISERAPRESPONSE_h
+#define WISERAPRESPONSE_h
 
 #include <Arduino.h>
 #include <WiFi101.h>
 
-#include "WiSerHelper.h"
+#include "WiSerHelpers.h"
 
-class WiSerResponse {
+class WiSerAPResponse {
   public:
-    WiSerResponse(WiFiClient& client) : _client(client) {
+    WiSerAPResponse(WiFiClient& client) : _client(client) {
       _protocol = "HTTP/1.1";
       _status = HttpCode::OK;
       _content = "";
       _headers = "";
     };
-    WiSerResponse& setStatus(HttpCode code);
-    WiSerResponse& setHeader(String key, String value);
-    WiSerResponse& setContent(String content);
+    WiSerAPResponse& setStatus(HttpCode code);
+    WiSerAPResponse& setHeader(String key, String value);
+    WiSerAPResponse& setContent(String content);
     void send();
     
   private:

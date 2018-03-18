@@ -9,22 +9,22 @@
 Callback            KEYWORD1
 HttpMethod          KEYWORD1
 HttpCode            KEYWORD1
-WiSerHelper         KEYWORD1
-WiSerRequest        KEYWORD1
-WiSerResponse       KEYWORD1
+WiSerHelpers        KEYWORD1
+WiSerAPRequest      KEYWORD1
+WiSerAPResponse     KEYWORD1
 
 #######################################
 # Methods and functions (KEYWORD2)    #
 #######################################
 
-# WiSerHelper.h
+# WiSerHelpers.h
 statusToString      KEYWORD2
 statusToCodeString  KEYWORD2
 methodToString      KEYWORD2
 codeStringToStatus  KEYWORD2
 stringToMethod      KEYWORD2
 
-# WiSerRequest.h
+# WiSerAPRequest.h
 catchRequest        KEYWORD2
 printRequest        KEYWORD2
 getClient           KEYWORD2
@@ -39,7 +39,7 @@ getQueryParams      KEYWORD2
 getForm             KEYWORD2
 getCode             KEYWORD2
 
-# WiSerResponse.h
+# WiSerAPResponse.h
 setStatus           KEYWORD2
 setHeader           KEYWORD2
 setContent          KEYWORD2

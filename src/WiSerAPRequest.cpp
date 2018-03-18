@@ -1,12 +1,12 @@
-#include "WiSerRequest.h"
+#include "WiSerAPRequest.h"
 
 // private
 
-void WiSerRequest::parseRequest(String request){
+void WiSerAPRequest::parseRequest(String request){
   int routeIdx = request.indexOf(" ");
   int protocolIdx = request.indexOf(" ", routeIdx + 1);
   
-  _method = WiSerHelper::stringToMethod(request.substring(0, routeIdx));
+  _method = WiSerHelpers::stringToMethod(request.substring(0, routeIdx));
   _route = request.substring(routeIdx + 1, protocolIdx);
 
   int queryIdx = _route.indexOf("?");
@@ -19,7 +19,7 @@ void WiSerRequest::parseRequest(String request){
   _protocol = request.substring(protocolIdx + 1);
 }
 
-String WiSerRequest::getValueFromString(String data, String key, String startDelimiter, String endDelimiter, bool caseSensitive){
+String WiSerAPRequest::getValueFromString(String data, String key, String startDelimiter, String endDelimiter, bool caseSensitive){
   String dataSensitive = data;
   if (!caseSensitive) { 
     dataSensitive.toLowerCase();
@@ -39,14 +39,14 @@ String WiSerRequest::getValueFromString(String data, String key, String startDel
   return data.substring(startIndex + startDelimiter.length(), endIndex);
 }
 
-int WiSerRequest::getContentLength(String headers) {
+int WiSerAPRequest::getContentLength(String headers) {
   String contentLength = getValueFromString(headers, "content-length", ": ", "\n", false);
   return contentLength == "" ? 0 : contentLength.toInt();
 }
 
 // public
 
-void WiSerRequest::catchRequest(RequestCallback& func) {
+void WiSerAPRequest::catchRequest(RequestCallback& func) {
   String currentLine = "";
   int lineNumber = 0;
   char previousChar;
@@ -103,46 +103,46 @@ void WiSerRequest::catchRequest(RequestCallback& func) {
   }
 }
 
-WiFiClient& WiSerRequest::getClient(){
+WiFiClient& WiSerAPRequest::getClient(){
   return _client;
 }
 
-String WiSerRequest::getHeader(String key){
+String WiSerAPRequest::getHeader(String key){
   return getValueFromString(_headers, key, ": ", "\n", false);
 }
 
-String WiSerRequest::getQueryParam(String key){
+String WiSerAPRequest::getQueryParam(String key){
   return getValueFromString(_params, key, "=", "&");
 }
 
-String WiSerRequest::getFormData(String key){
+String WiSerAPRequest::getFormData(String key){
   return getValueFromString(_form, key, "=", "&");
 }
 
-HttpMethod WiSerRequest::getMethod(){
+HttpMethod WiSerAPRequest::getMethod(){
   return _method;
 }
 
-String WiSerRequest::getRoute(){
+String WiSerAPRequest::getRoute(){
   return _route;
 }
 
-String WiSerRequest::getProtocol(){
+String WiSerAPRequest::getProtocol(){
   return _protocol;
 }
 
-String WiSerRequest::getHeaders(){
+String WiSerAPRequest::getHeaders(){
   return _headers;
 }
 
-String WiSerRequest::getQueryParams(){
+String WiSerAPRequest::getQueryParams(){
   return _params;
 }
 
-String WiSerRequest::getForm(){
+String WiSerAPRequest::getForm(){
   return _form;
 }
 
-HttpCode WiSerRequest::getCode(){
+HttpCode WiSerAPRequest::getCode(){
   return _code;
 }

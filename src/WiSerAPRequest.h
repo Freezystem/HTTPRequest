@@ -1,16 +1,16 @@
-#ifndef HTTPREQUEST_h
-#define HTTPREQUEST_h
+#ifndef WISERAPREQUEST_h
+#define WISERAPREQUEST_h
 
 #include <Arduino.h>
 #include <WiFi101.h>
 
-#include "WiSerHelper.h"
+#include "WiSerHelpers.h"
 
-class WiSerRequest {
-  typedef void (RequestCallback)(WiSerRequest& request);
+class WiSerAPRequest {
+  typedef void (RequestCallback)(WiSerAPRequest& request);
   
   public:
-    WiSerRequest(WiFiClient& client) : _client(client) {
+    WiSerAPRequest(WiFiClient& client) : _client(client) {
       _request = "";
       _headers = "";
       _route = "";

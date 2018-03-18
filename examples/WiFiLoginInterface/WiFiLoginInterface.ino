@@ -59,7 +59,7 @@ void loop() {
   WiFiClient client = server.available();
   
   if (client) {
-    WiSerRequest req = WiSerRequest(client);
+    WiSerAPRequest req = WiSerAPRequest(client);
     
     req.catchRequest(callback);
 
@@ -68,10 +68,10 @@ void loop() {
   }
 }
 
-void callback(WiSerRequest& req) {
-  Serial.print(String("\nmethod:" + WiSerHelper::methodToString(req.getMethod()) + "\n"));
+void callback(WiSerAPRequest& req) {
+  Serial.print(String("\nmethod:" + WiSerHelpers::methodToString(req.getMethod()) + "\n"));
   WiFiClient& client = req.getClient();
-  WiSerResponse res = WiSerResponse(client);
+  WiSerAPResponse res = WiSerAPResponse(client);
     
   switch(req.getMethod()) {
     case HttpMethod::GET : {

@@ -1,5 +1,5 @@
-#ifndef WISERHELPER_h
-#define WISERHELPER_h
+#ifndef WISERHELPERS_h
+#define WISERHELPERS_h
 
 #ifndef WISER_DEBUG
 #define WISER_DEBUG false
@@ -59,7 +59,7 @@ enum class HttpCode : unsigned int {
   HTTP_VERSION_NOT_SUPPORTED
 };
 
-class WiSerHelper {
+class WiSerHelpers {
   public:
   static String statusToString(HttpCode code);
   static String statusToCodeString(HttpCode code);
